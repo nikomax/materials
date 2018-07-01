@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    // function Cat(name, color) {
+    //     this.name = name;
+    //     this.color = color;
+    // }
+    //
+    // Cat.prototype.say = function (text) {
+    //     console.log(`Hi! I am ${this.name}. ${text}`);
+    // };
+    //
+    // Cat.prototype.run = function (text) {
+    //     console.log(`Hi! I am ${this.name}. ${text}`);
+    // };
+    //
+    // const murzik = new Cat('Murzik', 'White'); //id1
+    // for (let key in murzik ) {
+    //     console.log(key);
+    // }
+    //
+
+
+
+    // const rizhik = new Cat('Rizhik', 'Yellow'); //id1
+    // const milka = new Cat('Milka', 'Gray'); // id2
+    // const muffin = new Cat('Muffin', 'Blue'); // id2
+    //
+    // milka.say = function (text) {
+    //     console.log(`Meoou! I am ${this.name}. ${text}`);
+    // };
+
+    //
+    // console.log('murzik', murzik);
+    // console.log('rizhik', rizhik);
+    // console.log('milka', milka);
+    // console.log('muffin', muffin);
+
+    // console.log(Cat.prototype);
+    // console.log(murzik.__proto__);
+    //
+    // var pursik = new Cat('Pursik', 'Black');
+    //
+    // console.log(pursik.__proto__);
+
+    // конструктор
+    // function Animal(name) {
+    //     this.name = name;
+    //
+    // }
+    //
+    // Animal.prototype.__speed = 0;
+    // // методы в прототипе
+    // Animal.prototype.run = function(speed) {
+    //     this.__speed += speed;
+    //     console.log( this.name + ' бежит, скорость ' + this.__speed );
+    // };
+    //
+    // Animal.prototype.stop = function() {
+    //     this.__speed = 0;
+    //     console.log( this.name + ' стоит' );
+    // };
+    //
+    // var animal = new Animal('Зверь');
+    //
+    // function Rabbit(name) {
+    //     this.name = name;
+    //     this.eats = ['морковка', 'капуста'];
+    // }
+    //
+    // Rabbit.prototype = Object.create(Animal.prototype);
+    //
+    // let jim = new Rabbit();
+    //
+    // Rabbit.prototype.jump = function () {
+    //     console.log('Jump');
+    // };
+    //
+    //
+    // Animal.prototype.sleep = function () {
+    //     console.log('Sleep');
+    // }
+    //
+    // console.log(jim);
+
+
+    class Animal {
+        constructor(name, maxSpeed = 0) {
+            this.name = name;
+            this.maxSpeed = maxSpeed;
+            this.speed = 0;
+        }
+
+        run(speed) {
+            let newSpeed = this.speed + speed;
+
+            this.speed = (newSpeed > this.maxSpeed) ? this.maxSpeed : newSpeed;
+
+            console.log( `${this.name} runs, speed ${this.speed}` );
+        }
+
+        stop() {
+            this.speed = 0;
+            console.log( `${this.name} stay still` );
+        }
+
+    }
+
+    let kim = new Animal('Kim', 20)
+
+    console.log(kim);
+
+
+
+</script>
+
+</body>
+</html>

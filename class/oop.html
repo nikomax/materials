@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // конструктор
+    function Animal(name) {
+        this.name = name;
+        this.speed = 0;
+    }
+
+    // методы в прототипе
+    Animal.prototype.run = function(speed) {
+        this.speed += speed;
+        alert( this.name + ' бежит, скорость ' + this.speed );
+    };
+
+    Animal.prototype.stop = function() {
+        this.speed = 0;
+        alert( this.name + ' стоит' );
+    };
+
+    var animal = new Animal('Зверь');
+
+    alert( animal.speed ); // 0, свойство взято из прототипа
+    animal.run(5); // Зверь бежит, скорость 5
+    animal.run(5); // Зверь бежит, скорость 10
+    animal.stop(); // Зверь стоит
+
+</script>
+
+</body>
+</html>

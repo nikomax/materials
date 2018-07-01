@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="container">
+    111111
+</div>
+<hr>
+<a href="#" id="prev">Prev</a>
+<a href="#" id="next">Next</a>
+
+<script>
+    function Slider() {
+        var images = [1,2,3,4,5,6,7];
+
+        var page = 1;
+        this.domElems = {
+            container: document.getElementById('container'),
+            prev: document.getElementById('prev'),
+            next: document.getElementById('next')
+        };
+
+        this.updatePage = function () {
+            this.domElems.container.innerText = this.page.toString();
+        };
+
+        this.nextPage = function () {
+            console.log('next');
+            page += 1;
+            this.updatePage();
+        };
+
+        this.prevPage = function () {
+            console.log('prev');
+            page -= 1;
+            this.updatePage();
+        };
+
+        this.domElems.prev.addEventListener('click', () => this.prevPage() );
+
+        this.domElems.next.addEventListener('click', this.nextPage.wbind(this));
+
+
+        // images.forEach( (item) => {
+        //     console.log(this);
+        // });
+
+        this.updatePage();
+    }
+
+
+    const slider = new Slider();
+
+
+
+
+
+</script>
+</body>
+</html>
